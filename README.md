@@ -56,11 +56,15 @@ Albania,Europe & Central Asia,Upper middle income,2020,97.0401,1
 
 This summary reflects the cleaned dataset and is intended as a narrative summary of the report, not a replacement for the Power BI model:
 
-- Average completion among reporting countries was about 92.88% in 2020 and 93.40% in 2024.
-- That indicates a modest increase of roughly 0.52 percentage points over the four-year period.
-- High-income countries generally reported much higher completion than low-income countries.
-- There were some large country-specific declines, which are worth investigating because they may reflect conflict, data gaps, policy disruption, or reporting inconsistency.
-- Countries such as Niger showed a sustained decline across the period and warrant close attention.
+- Overall progress was limited: Average female primary completion rose from 92.88% in 2020 to 93.4% in 2024, an increase of just 0.52 percentage points.
+
+- Income inequality remained substantial: High income countries recorded completion rates 29.26 percentage points higher than low income countries in 2024.
+
+- Niger showed concerning outcomes: Its reported completion rate fell from approximately 56% in 2021 to 40.5% in the later observation.
+
+- Higher income did not guarantee improvement: Seychelles recorded a decline of 39.65 percentage points, while the British Virgin Islands fell by approximately 14 points.
+
+- Progress varied sharply by country: Hungary recorded an improvement of approximately 16 percentage points, contrasting with substantial declines elsewhere.
 
 ## Reproducing the analysis in Power BI
 
@@ -142,11 +146,8 @@ This analysis is strongest when framed as a descriptive cross-country comparison
 
 ## Notes on the findings
 
-Some of the original narrative in the project description is valid, but a few points should be handled carefully:
+The reported average is an unweighted arithmetic mean of available country-level female primary completion rates in the dataset, calculated using DAX in Power BI. It should not be interpreted as the official World Bank global aggregate, which uses a weighted aggregation method. Differences may also reflect reporting coverage and data revisions.
 
-- The phrase “High income countries performed 29.26% better” is best expressed as a percentage-point difference or as a comparison of average completion rates, not as a raw percentage increase.
-- “Seychelles saw a change of -39.65” is a large drop and should be identified as a notable anomaly or data-quality concern unless validated against source data.
-- “Niger declined by ~14.0 percentage points over four years” is a sobering result and should be presented with context, not as a universal trend for all low-income countries.
 
 ## How to use this repository
 
@@ -165,23 +166,8 @@ If you want to rebuild it from scratch:
 3. Add the DAX measures.
 4. Design the visuals from the summary findings above.
 
-## Recommended reporting wording
-
-For presentation and documentation purposes, the analysis is best described as:
-
-> This dashboard compares female primary education completion rates across countries between 2020 and 2024 using World Bank data. It highlights country-level changes, regional and income-group differences, and countries with the most significant gains or declines in reported completion rates.
-
-This wording is clearer and less likely to overstate what the data can prove.
-
 ## License and usage
 
 This repository is intended for educational and analytical use. The dataset is based on World Bank public data, and the project documentation is a companion for the report rather than an official statistical publication.
 
----
 
-If you want, I can also help you add:
-
-- a more polished executive summary page inside the `.pbix`
-- a slide-style narrative for presentation
-- a cleaned Power BI data dictionary
-- a `docs/analysis.md` file with narrative findings and chart explanations
